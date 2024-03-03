@@ -62,9 +62,8 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Positioned(
-                top: ScreenUtil().setHeight(topTwo+300),
-                child: Icon(Icons.keyboard_double_arrow_down_sharp)
-              ),
+                  top: ScreenUtil().setHeight(topTwo + 450.h),
+                  child: Icon(Icons.keyboard_double_arrow_down_sharp)),
               ListView(
                 children: [
                   Container(
@@ -78,21 +77,21 @@ class _HomeState extends State<Home> {
                       alignment: Alignment.center,
                       children: [
                         Positioned(
-                            top: ScreenUtil().setHeight(topOne + 50),
+                            top: ScreenUtil().setHeight(topOne + 50.h),
                             child: Text(
                               "My projects",
                               style: TextStyle(
                                   color: Colors.white, fontSize: 40.sp),
                             )),
                         Positioned(
-                            top: ScreenUtil().setHeight(topTwo + 300),
+                            top: ScreenUtil().setHeight(topTwo + 300.h),
                             child: Text(
                               "(Created by me)",
                               style: TextStyle(
                                   color: Colors.white.withOpacity(0.5)),
                             )),
                         Positioned(
-                          top: ScreenUtil().setHeight(topTwo + 500),
+                          top: ScreenUtil().setHeight(topTwo + 500.h),
                           child: SizedBox(
                             width: MediaQuery.of(context).size.width,
                             child: Padding(
@@ -173,16 +172,34 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         Positioned(
-                            top: ScreenUtil().setHeight(topOne + 1100),
+                            top: ScreenUtil().setHeight(topOne + 1450.h),
                             child: Text(
                               "My Skills",
                               style: TextStyle(
                                   color: Colors.white, fontSize: 30.sp),
                             )),
+
                         Positioned(
-                            top: ScreenUtil().setHeight(topOne + 1250),
-                            child:
-                                Image(image: AssetImage('assets/skills.png'))),
+                            top: ScreenUtil().setHeight(topOne + 1680.h),
+                            left: 10.w,
+                            child: Transform.scale(
+                                scale: 0.9,
+                                child: Transform.rotate(
+                                    angle: bot / 120,
+                                    child: Image(
+                                        image: AssetImage(
+                                            'assets/dolphin.png'))))),
+                        Positioned(
+                            top: ScreenUtil().setHeight(topOne + 1500.h),
+                            right: 1.w,
+                            child: Transform.scale(
+                                scale: 0.8,
+                                child: Transform.rotate(
+                                    angle: bot / 150 -3,
+                                    child: Image(
+                                        image: AssetImage(
+                                            'assets/dolphin.png'))))),
+
                         Positioned(
                             top: ScreenUtil().setHeight(1400),
                             child: Transform.scale(
@@ -193,8 +210,7 @@ class _HomeState extends State<Home> {
                                   Positioned(left: 80, child: MyAnimation())
                                 ],
                               ),
-                            )
-                        )
+                            ))
                       ],
                     ),
                     /*Column(
@@ -204,8 +220,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),*/
                   ),
-
-                  buildScroll(bot)
+                  buildScroll(bot),
                 ],
               ),
             ],
@@ -214,22 +229,27 @@ class _HomeState extends State<Home> {
   }
 }
 
-Widget buildScroll(double bot){
+Widget buildScroll(double bot) {
   return Container(
     height: 3000.h,
     color: Color(0xffC0C0C0),
     child: Stack(
       children: [
         Positioned(
-            top: ScreenUtil().setHeight(1000),
+            top: ScreenUtil().setHeight(300.h),
+            left: ScreenUtil().setWidth(80),
+            child:
+            Container(
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.grey[800]),height: 300.h,width: 230.w,)),
+        Positioned(
+            top: ScreenUtil().setHeight(1000.h),
             left: ScreenUtil().setWidth(50),
-
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
                 width: 300.w,
                 child: Text(
-                  "I am a creative person. I am always dedicated towards my work. I wish to upscale my skills and improve myself whenever it is needed. I design and develop app",
+                  "I am a creative person. I am always dedicated towards my work. I wish to upscale my skills and improve myself whenever it is needed.",
                   style: TextStyle(fontSize: 10.sp),
                 ),
               ),
@@ -238,12 +258,16 @@ Widget buildScroll(double bot){
             left: ScreenUtil().setWidth(bot),
             top: ScreenUtil().setHeight(40),
             child: SizedBox(
-              height: 1000.h,
+                height: 1000.h,
                 child: Image(
                   image: AssetImage('assets/fishes.png'),
                   fit: BoxFit.cover,
                 ))),
-
+        Positioned(
+            top: ScreenUtil().setHeight(250.h),
+            left: ScreenUtil().setWidth(73),
+            child:
+            SizedBox(height: 400.h,width: 260.w,child: Image(image: AssetImage('assets/skills.png')))),
       ],
     ),
   );

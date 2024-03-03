@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/Animation/wave.dart';
+import 'package:portfolio/Skills/skills.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -178,7 +179,6 @@ class _HomeState extends State<Home> {
                               style: TextStyle(
                                   color: Colors.white, fontSize: 30.sp),
                             )),
-
                         Positioned(
                             top: ScreenUtil().setHeight(topOne + 1680.h),
                             left: 10.w,
@@ -195,11 +195,10 @@ class _HomeState extends State<Home> {
                             child: Transform.scale(
                                 scale: 0.8,
                                 child: Transform.rotate(
-                                    angle: bot / 150 -3,
+                                    angle: bot / 150 - 3,
                                     child: Image(
                                         image: AssetImage(
                                             'assets/dolphin.png'))))),
-
                         Positioned(
                             top: ScreenUtil().setHeight(1400),
                             child: Transform.scale(
@@ -238,9 +237,13 @@ Widget buildScroll(double bot) {
         Positioned(
             top: ScreenUtil().setHeight(300.h),
             left: ScreenUtil().setWidth(80),
-            child:
-            Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.grey[800]),height: 300.h,width: 230.w,)),
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.grey[800]),
+              height: 300.h,
+              width: 230.w,
+            )),
         Positioned(
             top: ScreenUtil().setHeight(1000.h),
             left: ScreenUtil().setWidth(50),
@@ -266,8 +269,20 @@ Widget buildScroll(double bot) {
         Positioned(
             top: ScreenUtil().setHeight(250.h),
             left: ScreenUtil().setWidth(73),
-            child:
-            SizedBox(height: 400.h,width: 260.w,child: Image(image: AssetImage('assets/skills.png')))),
+            child: SizedBox(
+                height: 400.h,
+                width: 260.w,
+                child: Image(image: AssetImage('assets/skills.png')))),
+        Positioned(
+            top: ScreenUtil().setHeight(1400.h),
+            left: ScreenUtil().setWidth(50),
+            child: Container(
+              height: 500.h,
+              width: 300.w,
+              color: Colors.black,
+              child: Skills(),
+            )
+        )
       ],
     ),
   );

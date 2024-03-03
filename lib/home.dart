@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
                 topOne = topOne - v.scrollDelta! / 4;
                 topTwo = topTwo - v.scrollDelta! / 2;
                 bot = bot - v.scrollDelta! / 5;
-                if (conw < 110) {
+                if (conw < 100) {
                   conw = conw + v.scrollDelta! / 20;
                 }
               });
@@ -60,6 +60,10 @@ class _HomeState extends State<Home> {
                   "PORTFOLIO",
                   style: TextStyle(fontSize: 50.sp),
                 ),
+              ),
+              Positioned(
+                top: ScreenUtil().setHeight(topTwo+300),
+                child: Icon(Icons.keyboard_double_arrow_down_sharp)
               ),
               ListView(
                 children: [
@@ -189,7 +193,8 @@ class _HomeState extends State<Home> {
                                   Positioned(left: 80, child: MyAnimation())
                                 ],
                               ),
-                            ))
+                            )
+                        )
                       ],
                     ),
                     /*Column(
@@ -199,59 +204,47 @@ class _HomeState extends State<Home> {
                   ],
                 ),*/
                   ),
-                  Container(
-                    height: 1100.h,
-                    color: Color(0xff4D70AD),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                            top: ScreenUtil().setHeight(250),
-                            left: ScreenUtil().setWidth(150),
-                            child: Container(
-                              child: Text(
-                                "Flutter",
-                                style: TextStyle(fontSize: 30.sp),
-                              ),
-                            )),
-                        Positioned(
-                            left: ScreenUtil().setWidth(bot + 200),
-                            top: ScreenUtil().setHeight(40),
-                            child: SizedBox(
-                                height: 400,
-                                child: Image(
-                                  image: AssetImage('assets/fishes.png'),
-                                ))),
-                        Positioned(
-                            left: ScreenUtil().setWidth(bot + 500),
-                            top: ScreenUtil().setHeight(100),
-                            child: SizedBox(
-                                height: 400,
-                                child: Image(
-                                  image: AssetImage('assets/fishes.png'),
-                                ))),
-                        Positioned(
-                            left: ScreenUtil().setWidth(bot + 50),
-                            top: ScreenUtil().setHeight(400),
-                            child: SizedBox(
-                                height: 400,
-                                child: Image(
-                                  image: AssetImage('assets/fishes.png'),
-                                ))),
-                        Positioned(
-                            left: ScreenUtil().setWidth(bot - 500),
-                            top: ScreenUtil().setHeight(20),
-                            child: SizedBox(
-                                height: 400,
-                                child: Image(
-                                  image: AssetImage('assets/fishes.png'),
-                                ))),
-                      ],
-                    ),
-                  ),
+
+                  buildScroll(bot)
                 ],
               ),
             ],
           )),
     );
   }
+}
+
+Widget buildScroll(double bot){
+  return Container(
+    height: 3000.h,
+    color: Color(0xffC0C0C0),
+    child: Stack(
+      children: [
+        Positioned(
+            top: ScreenUtil().setHeight(1000),
+            left: ScreenUtil().setWidth(50),
+
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                width: 300.w,
+                child: Text(
+                  "I am a creative person. I am always dedicated towards my work. I wish to upscale my skills and improve myself whenever it is needed. I design and develop app",
+                  style: TextStyle(fontSize: 10.sp),
+                ),
+              ),
+            )),
+        Positioned(
+            left: ScreenUtil().setWidth(bot),
+            top: ScreenUtil().setHeight(40),
+            child: SizedBox(
+              height: 1000.h,
+                child: Image(
+                  image: AssetImage('assets/fishes.png'),
+                  fit: BoxFit.cover,
+                ))),
+
+      ],
+    ),
+  );
 }

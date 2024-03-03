@@ -7,7 +7,7 @@ class MyClipPath extends AnimatedWidget {
   MyClipPath(this.animation)
       : super(listenable: animation);
 
-    final Color backgroundColor = Color(0xff6796e9);
+    final Color backgroundColor = Colors.white;
 
   @override
   Widget build(BuildContext context) {

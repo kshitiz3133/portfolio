@@ -15,9 +15,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   double topOne = 200;
   double fOne = 1;
-  double topTwo = 450;
+  double topTwo = 550;
   double bot = 250;
-  double conw = 50; //size
+  double conw = 30; //size
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
                 topOne = topOne - v.scrollDelta! / 4;
                 topTwo = topTwo - v.scrollDelta! / 2;
                 bot = bot - v.scrollDelta! / 5;
-                if (conw < 100) {
+                if (conw < 80) {
                   conw = conw + v.scrollDelta! / 20;
                 }
                 /*if(fOne>0.2&&fOne<=1){
@@ -48,26 +48,26 @@ class _HomeState extends State<Home> {
                 child: Text(
                   ":)",
                   textScaler: TextScaler.linear(1.0),
-                  style: TextStyle(fontSize: 20.sp),
+                  style: TextStyle(fontSize: 80.sp),
                 ),
               ),
               Positioned(
-                left: ScreenUtil().setWidth(bot - 200),
-                bottom: ScreenUtil().setHeight(380),
+                left: ScreenUtil().setWidth(bot - 50.w),
+                bottom: ScreenUtil().setHeight(800.h),
                 child: Text(
                   "Kshitiz Agarwal\'s\ ",
-                  style: TextStyle(fontSize: 40.sp,color: Colors.black.withOpacity(fOne)),
+                  style: TextStyle(fontSize: 120.sp,color: Colors.black.withOpacity(fOne)),
                 ),
               ),
               Positioned(
                 top: ScreenUtil().setHeight(topTwo),
                 child: Text(
                   "PORTFOLIO",
-                  style: TextStyle(fontSize: 50.sp),
+                  style: TextStyle(fontSize: 140.sp),
                 ),
               ),
               Positioned(
-                  top: ScreenUtil().setHeight(topTwo + 450.h),
+                  top: ScreenUtil().setHeight(topTwo + 550.h),
                   child: Icon(Icons.keyboard_double_arrow_down_sharp)),
               ListView(
                 children: [
@@ -86,7 +86,7 @@ class _HomeState extends State<Home> {
                             child: Text(
                               "My projects",
                               style: TextStyle(
-                                  color: Colors.white, fontSize: 40.sp),
+                                  color: Colors.white, fontSize: 100.sp),
                             )),
                         Positioned(
                             top: ScreenUtil().setHeight(topTwo + 300.h),
@@ -107,8 +107,8 @@ class _HomeState extends State<Home> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Container(
-                                    height: 5 * conw.h,
-                                    width: conw.w,
+                                    height: 6 * conw.h,
+                                    width: 4*conw.w,
                                     color: Colors.white,
                                     child: Column(
                                       mainAxisAlignment:
@@ -130,8 +130,8 @@ class _HomeState extends State<Home> {
                                     ),
                                   ),
                                   Container(
-                                    height: 5 * conw.h,
-                                    width: conw.w,
+                                    height: 6 * conw.h,
+                                    width: 4*conw.w,
                                     color: Colors.white,
                                     child: Column(
                                       mainAxisAlignment:
@@ -150,8 +150,8 @@ class _HomeState extends State<Home> {
                                     ),
                                   ),
                                   Container(
-                                    height: 5 * conw.h,
-                                    width: conw.w,
+                                    height: 6 * conw.h,
+                                    width: 4*conw.w,
                                     color: Colors.white,
                                     child: Column(
                                       mainAxisAlignment:
@@ -177,24 +177,24 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                         Positioned(
-                            top: ScreenUtil().setHeight(topOne + 1450.h),
+                            top: ScreenUtil().setHeight(topOne + 1750.h),
                             child: Text(
                               "My Skills",
                               style: TextStyle(
-                                  color: Colors.white, fontSize: 30.sp),
+                                  color: Colors.white, fontSize: 100.sp),
                             )),
                         Positioned(
-                            top: ScreenUtil().setHeight(topOne + 1680.h),
+                            top: ScreenUtil().setHeight(topOne.h + 1880.h),
                             left: 10.w,
                             child: Transform.scale(
                                 scale: 0.9,
                                 child: Transform.rotate(
-                                    angle: bot / 120,
+                                    angle: bot / 120+6,
                                     child: Image(
                                         image: AssetImage(
                                             'assets/dolphin.png'))))),
                         Positioned(
-                            top: ScreenUtil().setHeight(topOne + 1500.h),
+                            top: ScreenUtil().setHeight(topOne + 1700.h),
                             right: 1.w,
                             child: Transform.scale(
                                 scale: 0.8,
@@ -204,7 +204,7 @@ class _HomeState extends State<Home> {
                                         image: AssetImage(
                                             'assets/dolphin.png'))))),
                         Positioned(
-                            top: ScreenUtil().setHeight(1400),
+                            top: ScreenUtil().setHeight(2180.h),
                             child: Transform.scale(
                               scale: 2,
                               child: Stack(
@@ -239,25 +239,25 @@ Widget buildScroll(BuildContext context,double bot) {
     child: Stack(
       children: [
         Positioned(
-            top: ScreenUtil().setHeight(300.h),
-            left: ScreenUtil().setWidth(80),
+            top: ScreenUtil().setHeight(350.h),
+            left: ScreenUtil().setWidth(400.w),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.grey[800]),
-              height: 300.h,
-              width: 230.w,
+              height: 350.h,
+              width: 900.w,
             )),
         Positioned(
             top: ScreenUtil().setHeight(1000.h),
-            left: ScreenUtil().setWidth(50),
+            left: ScreenUtil().setWidth(450.w),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                width: 300.w,
+                width: 800.w,
                 child: Text(
                   "I am a creative person. I am always dedicated towards my work. I wish to upscale my skills and improve myself whenever it is needed.",
-                  style: TextStyle(fontSize: 10.sp),
+                  style: TextStyle(fontSize: 50.sp),
                 ),
               ),
             )),
@@ -271,16 +271,16 @@ Widget buildScroll(BuildContext context,double bot) {
                   fit: BoxFit.cover,
                 ))),
         Positioned(
-            top: ScreenUtil().setHeight(250.h),
-            left: ScreenUtil().setWidth(73),
+            top: ScreenUtil().setHeight(150.h),
+            left: ScreenUtil().setWidth(400.w),
             child: SizedBox(
-                height: 400.h,
-                width: 260.w,
+                height: 600.h,
+                width: 960.w,
                 child: Image(image: AssetImage('assets/skills.png')))),
         Positioned(
-            top: ScreenUtil().setHeight(1400.h),
+            top: ScreenUtil().setHeight(1700.h),
             child: Container(
-              height: 3000.h,
+              height: 4000.h,
               width: MediaQuery.of(context).size.width,
               child: Skills(),
             )

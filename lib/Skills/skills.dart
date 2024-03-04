@@ -11,7 +11,7 @@ class Skills extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SizedBox(
-                height: 500.h,
+                height: 300.h,
                 child: Image(image: AssetImage('assets/flutter.png'),)),
             SizedBox(
               width: 150.w,

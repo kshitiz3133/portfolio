@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
                 ),
                 Positioned(
                   top: ScreenUtil().setHeight(topOne-200),
-                  right: ScreenUtil().setHeight(100),
+                  right: ScreenUtil().setWidth(10.w),
                   child: Cat(),
                 ),
                 Positioned(

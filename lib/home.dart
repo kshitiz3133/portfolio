@@ -79,7 +79,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Positioned(
-                    top: ScreenUtil().setHeight(topTwo + 450.h),
+                    top: ScreenUtil().setHeight(topTwo + 400.h),
                     child: Icon(Icons.keyboard_double_arrow_down_sharp)),
                 ListView(
                   children: [
@@ -307,9 +307,11 @@ Widget buildScroll(BuildContext context, double bot) {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.grey[800]),
-              height: 300.h,
-              width: 230.w,
-            )),
+                child: SizedBox(
+                    height: 300.h,
+                    width: 230.w,
+                    child: Visibility(visible: false,child: Image(image: AssetImage('assets/skills.png'))))),
+            ),
         Positioned(
             left: ScreenUtil().setWidth(bot),
             top: ScreenUtil().setHeight(40),

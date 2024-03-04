@@ -5,7 +5,11 @@ class Skills extends StatelessWidget {
     return PageView(
       physics: NeverScrollableScrollPhysics(),
       children: [
-        Container(color: Colors.black,),
+        Container(child: Row(
+          children: [
+            Image(image: AssetImage('assets/flutter.png'),),
+          ],
+        ),),
         Container(color: Colors.red,),
         Container(color: Colors.green,),
       ],

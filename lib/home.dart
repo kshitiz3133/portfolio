@@ -279,7 +279,6 @@ Widget buildScroll(double bot) {
             child: Container(
               height: 500.h,
               width: 300.w,
-              color: Colors.black,
               child: Skills(),
             )
         )

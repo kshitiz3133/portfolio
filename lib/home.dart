@@ -245,7 +245,7 @@ class _HomeState extends State<Home> {
                                     color: Colors.white, fontSize: 30.sp),
                               )),
                           Positioned(
-                              top: ScreenUtil().setHeight(topOne + 1780.h),
+                              top: ScreenUtil().setHeight(topOne + 1680.h),
                               left: 10.w,
                               child: Transform.scale(
                                   scale: 0.9,
@@ -255,7 +255,7 @@ class _HomeState extends State<Home> {
                                           image: AssetImage(
                                               'assets/dolphin.png'))))),
                           Positioned(
-                              top: ScreenUtil().setHeight(topOne + 1550.h),
+                              top: ScreenUtil().setHeight(topOne + 1450.h),
                               right: 1.w,
                               child: Transform.scale(
                                   scale: 0.8,

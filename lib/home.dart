@@ -219,7 +219,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),*/
                   ),
-                  buildScroll(bot),
+                  buildScroll(context,bot),
                 ],
               ),
             ],
@@ -228,7 +228,7 @@ class _HomeState extends State<Home> {
   }
 }
 
-Widget buildScroll(double bot) {
+Widget buildScroll(BuildContext context,double bot) {
   return Container(
     height: 3000.h,
     color: Color(0xffC0C0C0),
@@ -275,10 +275,9 @@ Widget buildScroll(double bot) {
                 child: Image(image: AssetImage('assets/skills.png')))),
         Positioned(
             top: ScreenUtil().setHeight(1400.h),
-            left: ScreenUtil().setWidth(50),
             child: Container(
-              height: 500.h,
-              width: 300.w,
+              height: 3000.h,
+              width: MediaQuery.of(context).size.width,
               child: Skills(),
             )
         )

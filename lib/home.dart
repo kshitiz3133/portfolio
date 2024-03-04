@@ -14,6 +14,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   double topOne = 200;
+  double fOne = 1;
   double topTwo = 450;
   double bot = 250;
   double conw = 50; //size
@@ -31,6 +32,9 @@ class _HomeState extends State<Home> {
                 if (conw < 100) {
                   conw = conw + v.scrollDelta! / 20;
                 }
+                /*if(fOne>0.2&&fOne<=1){
+                  fOne=fOne-v.scrollDelta!/1000;
+                }*/
               });
             }
             return true;
@@ -52,7 +56,7 @@ class _HomeState extends State<Home> {
                 bottom: ScreenUtil().setHeight(380),
                 child: Text(
                   "Kshitiz Agarwal\'s\ ",
-                  style: TextStyle(fontSize: 40.sp),
+                  style: TextStyle(fontSize: 40.sp,color: Colors.black.withOpacity(fOne)),
                 ),
               ),
               Positioned(

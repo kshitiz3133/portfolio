@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio/Animation/cat.dart';
 import 'package:portfolio/Animation/wave.dart';
 import 'package:portfolio/Skills/skills.dart';
 
@@ -17,224 +18,285 @@ class _HomeState extends State<Home> {
   double fOne = 1;
   double topTwo = 450;
   double bot = 250;
-  double conw = 50; //size
+  double conw = 60; //size
+  bool _isHovereda = false;
+  bool _isHoveredb = false;
+  bool _isHoveredc = false;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: NotificationListener(
-          onNotification: (v) {
-            if (v is ScrollUpdateNotification) {
-              setState(() {
-                topOne = topOne - v.scrollDelta! / 4;
-                topTwo = topTwo - v.scrollDelta! / 2;
-                bot = bot - v.scrollDelta! / 5;
-                if (conw < 100) {
-                  conw = conw + v.scrollDelta! / 20;
-                }
-                /*if(fOne>0.2&&fOne<=1){
-                  fOne=fOne-v.scrollDelta!/1000;
-                }*/
-              });
-            }
-            return true;
-          },
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Positioned(
-                top: ScreenUtil().setHeight(topOne),
-                left: ScreenUtil().setHeight(100),
-                child: Text(
-                  ":)",
-                  textScaler: TextScaler.linear(1.0),
-                  style: TextStyle(fontSize: 20.sp),
-                ),
-              ),
-              Positioned(
-                left: ScreenUtil().setWidth(bot - 200),
-                bottom: ScreenUtil().setHeight(380),
-                child: Text(
-                  "Kshitiz Agarwal\'s\ ",
-                  style: TextStyle(fontSize: 40.sp,color: Colors.black.withOpacity(fOne)),
-                ),
-              ),
-              Positioned(
-                top: ScreenUtil().setHeight(topTwo),
-                child: Text(
-                  "PORTFOLIO",
-                  style: TextStyle(fontSize: 50.sp),
-                ),
-              ),
-              Positioned(
-                  top: ScreenUtil().setHeight(topTwo + 450.h),
-                  child: Icon(Icons.keyboard_double_arrow_down_sharp)),
-              ListView(
-                children: [
-                  Container(
-                    height: 1100.h,
-                    color: Colors.transparent,
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(1.0)),
+      child: Scaffold(
+        body: NotificationListener(
+            onNotification: (v) {
+              if (v is ScrollUpdateNotification) {
+                setState(() {
+                  topOne = topOne - v.scrollDelta! / 4;
+                  topTwo = topTwo - v.scrollDelta! / 2;
+                  bot = bot - v.scrollDelta! / 5;
+                  if (conw < 100) {
+                    conw = conw + v.scrollDelta! / 20;
+                  }
+                  /*if(fOne>0.2&&fOne<=1){
+                    fOne=fOne-v.scrollDelta!/1000;
+                  }*/
+                });
+              }
+              return true;
+            },
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Positioned(
+                  top: ScreenUtil().setHeight(topOne),
+                  left: ScreenUtil().setHeight(100),
+                  child: Text(
+                    ":)",
+                    textScaler: TextScaler.linear(1.0),
+                    style: TextStyle(fontSize: 20.sp),
                   ),
-                  Container(
-                    height: 1500.h,
-                    color: Colors.black,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Positioned(
-                            top: ScreenUtil().setHeight(topOne + 50.h),
-                            child: Text(
-                              "My projects",
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: 40.sp),
-                            )),
-                        Positioned(
-                            top: ScreenUtil().setHeight(topTwo + 300.h),
-                            child: Text(
-                              "(Created by me)",
-                              style: TextStyle(
-                                  color: Colors.white.withOpacity(0.5)),
-                            )),
-                        Positioned(
-                          top: ScreenUtil().setHeight(topTwo + 500.h),
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width,
-                            child: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    height: 5 * conw.h,
-                                    width: conw.w,
-                                    color: Colors.white,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        SizedBox(
-                                          height: 100.h,
+                ),
+                Positioned(
+                  top: ScreenUtil().setHeight(topOne-200),
+                  right: ScreenUtil().setHeight(100),
+                  child: Cat(),
+                ),
+                Positioned(
+                  left: ScreenUtil().setWidth(bot - 200),
+                  bottom: ScreenUtil().setHeight(380),
+                  child: Text(
+                    "Kshitiz Agarwal\'s\ ",
+                    style: TextStyle(
+                        fontSize: 40.sp, color: Colors.black.withOpacity(fOne)),
+                  ),
+                ),
+                Positioned(
+                  top: ScreenUtil().setHeight(topTwo),
+                  child: Text(
+                    "PORTFOLIO",
+                    style: TextStyle(fontSize: 50.sp),
+                  ),
+                ),
+                Positioned(
+                    top: ScreenUtil().setHeight(topTwo + 450.h),
+                    child: Icon(Icons.keyboard_double_arrow_down_sharp)),
+                ListView(
+                  children: [
+                    Container(
+                      height: 1100.h,
+                      color: Colors.transparent,
+                    ),
+                    Container(
+                      height: 1500.h,
+                      color: Colors.black,
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Positioned(
+                              top: ScreenUtil().setHeight(topOne + 50.h),
+                              child: Text(
+                                "My projects",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 40.sp),
+                              )),
+                          Positioned(
+                              top: ScreenUtil().setHeight(topTwo + 300.h),
+                              child: Text(
+                                "(Created by me)",
+                                style: TextStyle(
+                                    color: Colors.white.withOpacity(0.5)),
+                              )),
+                          Positioned(
+                            top: ScreenUtil().setHeight(topTwo + 500.h),
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    MouseRegion(
+                                      onEnter: (event) {
+                                        setState(() {
+                                          _isHovereda = true;
+                                        });
+                                      },
+                                      onExit: (event) {
+                                        setState(() {
+                                          _isHovereda = false;
+                                        });
+                                      },
+                                      child: AnimatedContainer(
+                                        duration: Duration(milliseconds: 200),
+                                        height: _isHovereda? 50+ 5*conw.h : 5 * conw.h,
+                                        width: _isHovereda? 50+ conw.w : conw.w,
+                                        color: _isHovereda
+                                            ? Colors.white
+                                            : Colors.grey[300],
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SizedBox(
+                                              height: 100.h,
+                                            ),
+                                            Icon(
+                                              Icons.chat_rounded,
+                                              color: Colors.black,
+                                              size: conw / 2,
+                                            ),
+                                            SizedBox(
+                                              height: conw.h,
+                                            ),
+                                            Text("Minimal Chatting App",style: TextStyle(fontSize: 6.sp),maxLines: 3,)
+                                          ],
                                         ),
-                                        Icon(
-                                          Icons.chat_rounded,
-                                          color: Colors.black,
-                                          size: conw / 2,
-                                        ),
-                                        SizedBox(
-                                          height: conw.h,
-                                        ),
-                                        Text("Minimal Chatting App")
-                                      ],
+                                      ),
                                     ),
-                                  ),
-                                  Container(
-                                    height: 5 * conw.h,
-                                    width: conw.w,
-                                    color: Colors.white,
-                                    child: Column(
-                                      mainAxisAlignment:
+                                    MouseRegion(
+                                      onEnter: (event) {
+                                        setState(() {
+                                          _isHoveredb = true;
+                                        });
+                                      },
+                                      onExit: (event) {
+                                        setState(() {
+                                          _isHoveredb = false;
+                                        });
+                                      },
+                                      child: AnimatedContainer(
+                                        duration: Duration(milliseconds: 200),
+                                        height: _isHoveredb? 50+ 5*conw.h : 5 * conw.h,
+                                        width: _isHoveredb? 50+ conw.w : conw.w,
+                                        color: _isHoveredb
+                                            ? Colors.white
+                                            : Colors.grey[300],
+                                        child: Column(
+                                          mainAxisAlignment:
                                           MainAxisAlignment.center,
-                                      children: [
-                                        SizedBox(
-                                          height: 100.h,
+                                          children: [
+                                            SizedBox(
+                                              height: 100.h,
+                                            ),
+                                            Icon(
+                                              Icons.chat_rounded,
+                                              color: Colors.black,
+                                              size: conw / 2,
+                                            ),
+                                            SizedBox(
+                                              height: conw.h,
+                                            ),
+                                            Text("Minimal Chatting App",style: TextStyle(fontSize: 6.sp),maxLines: 3,)
+                                          ],
                                         ),
-                                        Icon(Icons.chat_rounded,
-                                            color: Colors.black),
-                                        SizedBox(
-                                          height: conw.h,
-                                        ),
-                                        Text("Minimal Chatting App")
-                                      ],
+                                      ),
                                     ),
-                                  ),
-                                  Container(
-                                    height: 5 * conw.h,
-                                    width: conw.w,
-                                    color: Colors.white,
-                                    child: Column(
-                                      mainAxisAlignment:
+                                    MouseRegion(
+                                      onEnter: (event) {
+                                        setState(() {
+                                          _isHoveredc = true;
+                                        });
+                                      },
+                                      onExit: (event) {
+                                        setState(() {
+                                          _isHoveredc = false;
+                                        });
+                                      },
+                                      child: AnimatedContainer(
+                                        duration: Duration(milliseconds: 200),
+                                        height: _isHoveredc? 50+ 5*conw.h : 5 * conw.h,
+                                        width: _isHoveredc? 50+ conw.w : conw.w,
+                                        color: _isHoveredc
+                                            ? Colors.white
+                                            : Colors.grey[300],
+                                        child: Column(
+                                          mainAxisAlignment:
                                           MainAxisAlignment.center,
-                                      children: [
-                                        SizedBox(
-                                          height: 100.h,
+                                          children: [
+                                            SizedBox(
+                                              height: 100.h,
+                                            ),
+                                            Icon(
+                                              Icons.chat_rounded,
+                                              color: Colors.black,
+                                              size: conw / 2,
+                                            ),
+                                            SizedBox(
+                                              height: conw.h,
+                                            ),
+                                            Text("Minimal Chatting App",style: TextStyle(fontSize: 6.sp),maxLines: 3,)
+                                          ],
                                         ),
-                                        Icon(
-                                          Icons.chat_rounded,
-                                          color: Colors.black,
-                                        ),
-                                        SizedBox(
-                                          height: conw.h,
-                                        ),
-                                        Text("Minimal Chatting App")
-                                      ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                            top: ScreenUtil().setHeight(topOne + 1450.h),
-                            child: Text(
-                              "My Skills",
-                              style: TextStyle(
-                                  color: Colors.white, fontSize: 30.sp),
-                            )),
-                        Positioned(
-                            top: ScreenUtil().setHeight(topOne + 1680.h),
-                            left: 10.w,
-                            child: Transform.scale(
-                                scale: 0.9,
-                                child: Transform.rotate(
-                                    angle: bot / 120,
-                                    child: Image(
-                                        image: AssetImage(
-                                            'assets/dolphin.png'))))),
-                        Positioned(
-                            top: ScreenUtil().setHeight(topOne + 1500.h),
-                            right: 1.w,
-                            child: Transform.scale(
-                                scale: 0.8,
-                                child: Transform.rotate(
-                                    angle: bot / 150 - 3,
-                                    child: Image(
-                                        image: AssetImage(
-                                            'assets/dolphin.png'))))),
-                        Positioned(
-                            top: ScreenUtil().setHeight(1400),
-                            child: Transform.scale(
-                              scale: 2,
-                              child: Stack(
-                                children: [
-                                  MyAnimation(),
-                                  Positioned(left: 80, child: MyAnimation())
-                                ],
-                              ),
-                            ))
-                      ],
+                          Positioned(
+                              top: ScreenUtil().setHeight(topOne + 1450.h),
+                              child: Text(
+                                "My Skills",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 30.sp),
+                              )),
+                          Positioned(
+                              top: ScreenUtil().setHeight(topOne + 1780.h),
+                              left: 10.w,
+                              child: Transform.scale(
+                                  scale: 0.9,
+                                  child: Transform.rotate(
+                                      angle: bot / 120,
+                                      child: Image(
+                                          image: AssetImage(
+                                              'assets/dolphin.png'))))),
+                          Positioned(
+                              top: ScreenUtil().setHeight(topOne + 1550.h),
+                              right: 1.w,
+                              child: Transform.scale(
+                                  scale: 0.8,
+                                  child: Transform.rotate(
+                                      angle: bot / 150 - 3,
+                                      child: Image(
+                                          image: AssetImage(
+                                              'assets/dolphin.png'))))),
+                          Positioned(
+                              top: ScreenUtil().setHeight(1400),
+                              child: Transform.scale(
+                                scale: 2,
+                                child: Stack(
+                                  children: [
+                                    MyAnimation(),
+                                    Positioned(left: 80, child: MyAnimation())
+                                  ],
+                                ),
+                              ))
+                        ],
+                      ),
+                      /*Column(
+                    children: [
+                      SizedBox(height: 50.h,),
+                      Text("Test",textScaler: TextScaler.linear(0.8),textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
+                    ],
+                  ),*/
                     ),
-                    /*Column(
-                  children: [
-                    SizedBox(height: 50.h,),
-                    Text("Test",textScaler: TextScaler.linear(0.8),textAlign: TextAlign.center,style: TextStyle(color: Colors.white)),
+                    buildScroll(context, bot),
                   ],
-                ),*/
-                  ),
-                  buildScroll(context,bot),
-                ],
-              ),
-            ],
-          )),
+                ),
+              ],
+            )),
+      ),
     );
   }
 }
 
-Widget buildScroll(BuildContext context,double bot) {
+Widget buildScroll(BuildContext context, double bot) {
   return Container(
-    height: 3000.h,
+    height: 3300.h,
     color: Color(0xffC0C0C0),
     child: Stack(
       children: [
@@ -249,6 +311,16 @@ Widget buildScroll(BuildContext context,double bot) {
               width: 230.w,
             )),
         Positioned(
+            left: ScreenUtil().setWidth(bot),
+            top: ScreenUtil().setHeight(40),
+            child: SizedBox(
+                height: 1000.h,
+                child: Image(
+                  image: AssetImage('assets/fishes.png'),
+                  fit: BoxFit.cover,
+                  colorBlendMode: BlendMode.srcOver,
+                ))),
+        Positioned(
             top: ScreenUtil().setHeight(1000.h),
             left: ScreenUtil().setWidth(50),
             child: Padding(
@@ -261,15 +333,7 @@ Widget buildScroll(BuildContext context,double bot) {
                 ),
               ),
             )),
-        Positioned(
-            left: ScreenUtil().setWidth(bot),
-            top: ScreenUtil().setHeight(40),
-            child: SizedBox(
-                height: 1000.h,
-                child: Image(
-                  image: AssetImage('assets/fishes.png'),
-                  fit: BoxFit.cover,
-                ))),
+
         Positioned(
             top: ScreenUtil().setHeight(250.h),
             left: ScreenUtil().setWidth(73),
@@ -283,8 +347,7 @@ Widget buildScroll(BuildContext context,double bot) {
               height: 3000.h,
               width: MediaQuery.of(context).size.width,
               child: Skills(),
-            )
-        )
+            ))
       ],
     ),
   );

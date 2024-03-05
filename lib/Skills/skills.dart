@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio/Animation/rocket.dart';
 //commit
 class Skills extends StatelessWidget {
   @override
@@ -133,7 +132,6 @@ class Skills extends StatelessWidget {
             padding: const EdgeInsets.only(top: 100.0),
             child: Text("Socials",style: TextStyle(fontSize: 20.sp),),
           ),
-          Rocket(),
         ],
       ),
     );

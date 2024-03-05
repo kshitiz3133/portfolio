@@ -318,7 +318,7 @@ class _HomeState extends State<Home> {
 
 Widget buildScroll(BuildContext context, double bot) {
   return Container(
-    height: 3400.h,
+    height: 5400.h,
     color: Color(0xffC0C0C0),
     child: Stack(
       children: [
@@ -373,7 +373,7 @@ Widget buildScroll(BuildContext context, double bot) {
               width: MediaQuery.of(context).size.width,
               child: Skills(),
             )),
-        Positioned(top: ScreenUtil().setHeight(3400.h+bot*2), left: ScreenUtil().setHeight(2*bot+500.w),child: Transform.rotate(angle: 5.5,child: Rocket()))
+        Positioned(top: ScreenUtil().setHeight(5800.h+bot*2), left: ScreenUtil().setHeight(2*bot+650.w),child: Transform.rotate(angle: 5.5,child: Rocket()))
       ],
     ),
   );

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/Animation/cat.dart';
+import 'package:portfolio/Animation/rocket.dart';
 import 'package:portfolio/Animation/wave.dart';
 import 'package:portfolio/Skills/skills.dart';
 
@@ -58,7 +59,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Positioned(
-                  top: ScreenUtil().setHeight(topOne-200),
+                  top: ScreenUtil().setHeight(topOne - 200),
                   right: ScreenUtil().setWidth(10.w),
                   child: Cat(),
                 ),
@@ -131,8 +132,11 @@ class _HomeState extends State<Home> {
                                       },
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 200),
-                                        height: _isHovereda? 50+ 5*conw.h : 5 * conw.h,
-                                        width: _isHovereda? 50+ conw.w : conw.w,
+                                        height: _isHovereda
+                                            ? 50 + 5 * conw.h
+                                            : 5 * conw.h,
+                                        width:
+                                            _isHovereda ? 50 + conw.w : conw.w,
                                         color: _isHovereda
                                             ? Colors.white
                                             : Colors.grey[300],
@@ -151,7 +155,11 @@ class _HomeState extends State<Home> {
                                             SizedBox(
                                               height: conw.h,
                                             ),
-                                            Text("Minimal Chatting App",style: TextStyle(fontSize: 6.sp),maxLines: 3,)
+                                            Text(
+                                              "Minimal Chatting App",
+                                              style: TextStyle(fontSize: 6.sp),
+                                              maxLines: 3,
+                                            )
                                           ],
                                         ),
                                       ),
@@ -169,14 +177,17 @@ class _HomeState extends State<Home> {
                                       },
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 200),
-                                        height: _isHoveredb? 50+ 5*conw.h : 5 * conw.h,
-                                        width: _isHoveredb? 50+ conw.w : conw.w,
+                                        height: _isHoveredb
+                                            ? 50 + 5 * conw.h
+                                            : 5 * conw.h,
+                                        width:
+                                            _isHoveredb ? 50 + conw.w : conw.w,
                                         color: _isHoveredb
                                             ? Colors.white
                                             : Colors.grey[300],
                                         child: Column(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             SizedBox(
                                               height: 100.h,
@@ -189,7 +200,11 @@ class _HomeState extends State<Home> {
                                             SizedBox(
                                               height: conw.h,
                                             ),
-                                            Text("Minimal Chatting App",style: TextStyle(fontSize: 6.sp),maxLines: 3,)
+                                            Text(
+                                              "Minimal Chatting App",
+                                              style: TextStyle(fontSize: 6.sp),
+                                              maxLines: 3,
+                                            )
                                           ],
                                         ),
                                       ),
@@ -207,14 +222,17 @@ class _HomeState extends State<Home> {
                                       },
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 200),
-                                        height: _isHoveredc? 50+ 5*conw.h : 5 * conw.h,
-                                        width: _isHoveredc? 50+ conw.w : conw.w,
+                                        height: _isHoveredc
+                                            ? 50 + 5 * conw.h
+                                            : 5 * conw.h,
+                                        width:
+                                            _isHoveredc ? 50 + conw.w : conw.w,
                                         color: _isHoveredc
                                             ? Colors.white
                                             : Colors.grey[300],
                                         child: Column(
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             SizedBox(
                                               height: 100.h,
@@ -227,7 +245,11 @@ class _HomeState extends State<Home> {
                                             SizedBox(
                                               height: conw.h,
                                             ),
-                                            Text("Minimal Chatting App",style: TextStyle(fontSize: 6.sp),maxLines: 3,)
+                                            Text(
+                                              "Minimal Chatting App",
+                                              style: TextStyle(fontSize: 6.sp),
+                                              maxLines: 3,
+                                            )
                                           ],
                                         ),
                                       ),
@@ -296,22 +318,24 @@ class _HomeState extends State<Home> {
 
 Widget buildScroll(BuildContext context, double bot) {
   return Container(
-    height: 3300.h,
+    height: 3400.h,
     color: Color(0xffC0C0C0),
     child: Stack(
       children: [
         Positioned(
-            top: ScreenUtil().setHeight(300.h),
-            left: ScreenUtil().setWidth(80),
-            child: Container(
+          top: ScreenUtil().setHeight(300.h),
+          left: ScreenUtil().setWidth(80),
+          child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.grey[800]),
-                child: SizedBox(
-                    height: 300.h,
-                    width: 230.w,
-                    child: Visibility(visible: false,child: Image(image: AssetImage('assets/skills.png'))))),
-            ),
+              child: SizedBox(
+                  height: 300.h,
+                  width: 230.w,
+                  child: Visibility(
+                      visible: false,
+                      child: Image(image: AssetImage('assets/skills.png'))))),
+        ),
         Positioned(
             left: ScreenUtil().setWidth(bot),
             top: ScreenUtil().setHeight(40),
@@ -335,7 +359,6 @@ Widget buildScroll(BuildContext context, double bot) {
                 ),
               ),
             )),
-
         Positioned(
             top: ScreenUtil().setHeight(250.h),
             left: ScreenUtil().setWidth(73),
@@ -349,7 +372,8 @@ Widget buildScroll(BuildContext context, double bot) {
               height: 3000.h,
               width: MediaQuery.of(context).size.width,
               child: Skills(),
-            ))
+            )),
+        Positioned(top: ScreenUtil().setHeight(3400.h+bot*2), left: ScreenUtil().setHeight(2*bot+500.w),child: Transform.rotate(angle: 5.5,child: Rocket()))
       ],
     ),
   );

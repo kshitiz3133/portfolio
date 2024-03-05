@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-class Cat extends StatefulWidget {
-  const Cat({Key? key}) : super(key: key);
+
+class Rocket extends StatefulWidget {
+  const Rocket({Key? key}) : super(key: key);
 
   @override
-  State<Cat> createState() => _CatState();
+  State<Rocket> createState() => _RocketState();
 }
 
-class _CatState extends State<Cat> with SingleTickerProviderStateMixin {
+class _RocketState extends State<Rocket> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _controller=AnimationController(duration: Duration(seconds: 2),vsync: this)..repeat();
+    _controller=AnimationController(duration: Duration(seconds: 1),vsync: this)..repeat();
+
   }
   @override
   void dispose() {
@@ -27,9 +29,9 @@ class _CatState extends State<Cat> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300.h,
+      height: MediaQuery.of(context).size.width/6,
       child: Lottie.network(
-          "https://lottie.host/f35790e2-f4dc-421d-9f7f-477201454887/9nyLd06N9D.json",
+          "https://lottie.host/ea1cb244-be16-4f59-a4e5-56fa3423ccb2/2sDC9gIVJk.json",
           controller: _controller
       ),
     );

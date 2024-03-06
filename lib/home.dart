@@ -260,7 +260,7 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Positioned(
-                              top: ScreenUtil().setHeight(topOne + 1450.h),
+                              top: ScreenUtil().setHeight(topOne + 1550.h),
                               child: Text(
                                 "My Skills",
                                 style: TextStyle(

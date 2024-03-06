@@ -330,7 +330,7 @@ Widget buildScroll(BuildContext context, double bot) {
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.grey[800]),
               child: SizedBox(
-                  height: MediaQuery.of(context).size.width / 5,
+                  height: MediaQuery.of(context).size.width / 4.5,
                   width: 230.w,
                   child: Visibility(
                       visible: false,
@@ -363,7 +363,7 @@ Widget buildScroll(BuildContext context, double bot) {
             top: ScreenUtil().setHeight(250.h),
             left: ScreenUtil().setWidth(73),
             child: SizedBox(
-                height: 62.h+MediaQuery.of(context).size.width / 5,
+                height: 62.h+MediaQuery.of(context).size.width / 4.5,
                 width: 260.w,
                 child: Image(image: AssetImage('assets/skills.png')))),
         Positioned(

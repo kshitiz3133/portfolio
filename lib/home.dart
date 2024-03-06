@@ -133,8 +133,8 @@ class _HomeState extends State<Home> {
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 200),
                                         height: _isHovereda
-                                            ? 50 + 5 * conw.h
-                                            : 5 * conw.h,
+                                            ? 50+MediaQuery.of(context).size.width/3 + conw.h
+                                            : MediaQuery.of(context).size.width/3+conw.h,
                                         width:
                                             _isHovereda ? 50 + conw.w : conw.w,
                                         color: _isHovereda
@@ -178,8 +178,8 @@ class _HomeState extends State<Home> {
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 200),
                                         height: _isHoveredb
-                                            ? 50 + 5 * conw.h
-                                            : 5 * conw.h,
+                                            ? 50+MediaQuery.of(context).size.width/3 + conw.h
+                                            : MediaQuery.of(context).size.width/3+conw.h,
                                         width:
                                             _isHoveredb ? 50 + conw.w : conw.w,
                                         color: _isHoveredb
@@ -223,8 +223,8 @@ class _HomeState extends State<Home> {
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 200),
                                         height: _isHoveredc
-                                            ? 50 + 5 * conw.h
-                                            : 5 * conw.h,
+                                            ? 50+MediaQuery.of(context).size.width/3 + conw.h
+                                            : MediaQuery.of(context).size.width/3+conw.h,
                                         width:
                                             _isHoveredc ? 50 + conw.w : conw.w,
                                         color: _isHoveredc
@@ -330,14 +330,14 @@ Widget buildScroll(BuildContext context, double bot) {
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.grey[800]),
               child: SizedBox(
-                  height: 300.h,
+                  height: MediaQuery.of(context).size.width / 5,
                   width: 230.w,
                   child: Visibility(
                       visible: false,
                       child: Image(image: AssetImage('assets/skills.png'))))),
         ),
         Positioned(
-            left: ScreenUtil().setWidth(bot),
+            left: ScreenUtil().setWidth(bot.h),
             top: ScreenUtil().setHeight(40),
             child: SizedBox(
                 height: 1000.h,
@@ -363,7 +363,7 @@ Widget buildScroll(BuildContext context, double bot) {
             top: ScreenUtil().setHeight(250.h),
             left: ScreenUtil().setWidth(73),
             child: SizedBox(
-                height: 400.h,
+                height: 62.h+MediaQuery.of(context).size.width / 5,
                 width: 260.w,
                 child: Image(image: AssetImage('assets/skills.png')))),
         Positioned(
@@ -373,7 +373,10 @@ Widget buildScroll(BuildContext context, double bot) {
               width: MediaQuery.of(context).size.width,
               child: Skills(),
             )),
-        Positioned(top: ScreenUtil().setHeight(5800.h+bot*2), left: ScreenUtil().setHeight(2*bot+650.w),child: Transform.rotate(angle: 5.5,child: Rocket()))
+        Positioned(
+            top: ScreenUtil().setHeight(MediaQuery.of(context).size.width*3.5+ bot * 2),
+            left: ScreenUtil().setHeight(2 * bot + 700.w),
+            child: Transform.rotate(angle: 5.5, child: Rocket()))
       ],
     ),
   );

@@ -7,14 +7,14 @@ import 'package:portfolio/Animation/rocket.dart';
 import 'package:portfolio/Animation/wave.dart';
 import 'package:portfolio/Skills/skills.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class DESKHOME extends StatefulWidget {
+  const DESKHOME({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<DESKHOME> createState() => _DESKHOMEState();
 }
 
-class _HomeState extends State<Home> {
+class _DESKHOMEState extends State<DESKHOME> {
   double topOne = 200;
   double fOne = 1;
   double topTwo = 450;
@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
                   topOne = topOne - v.scrollDelta! / 4;
                   topTwo = topTwo - v.scrollDelta! / 2;
                   bot = bot - v.scrollDelta! / 5;
-                  if (conw < 100) {
+                  if (conw < 90) {
                     conw = conw + v.scrollDelta! / 20;
                   }
                   /*if(fOne>0.2&&fOne<=1){
@@ -55,32 +55,32 @@ class _HomeState extends State<Home> {
                   child: Text(
                     ":)",
                     textScaler: TextScaler.linear(1.0),
-                    style: TextStyle(fontSize: 20.sp),
+                    style: TextStyle(fontSize: 70.sp),
                   ),
                 ),
                 Positioned(
-                  top: ScreenUtil().setHeight(topOne - 200),
-                  right: ScreenUtil().setWidth(10.w),
+                  top: ScreenUtil().setHeight(topOne - 100),
+                  right: ScreenUtil().setWidth(100.w),
                   child: Cat(),
                 ),
                 Positioned(
-                  left: ScreenUtil().setWidth(bot - 200),
-                  bottom: ScreenUtil().setHeight(380),
+                  left: ScreenUtil().setWidth(bot +100),
+                  bottom: ScreenUtil().setHeight(480),
                   child: Text(
                     "Kshitiz Agarwal\'s\ ",
                     style: TextStyle(
-                        fontSize: 40.sp, color: Colors.black.withOpacity(fOne)),
+                        fontSize: 80.sp, color: Colors.black.withOpacity(fOne)),
                   ),
                 ),
                 Positioned(
-                  top: ScreenUtil().setHeight(topTwo),
+                  top: ScreenUtil().setHeight(topTwo+100),
                   child: Text(
                     "PORTFOLIO",
-                    style: TextStyle(fontSize: 50.sp),
+                    style: TextStyle(fontSize: 90.sp),
                   ),
                 ),
                 Positioned(
-                    top: ScreenUtil().setHeight(topTwo + 400.h),
+                    top: ScreenUtil().setHeight(topTwo + 800.h),
                     child: Icon(Icons.keyboard_double_arrow_down_sharp)),
                 ListView(
                   children: [
@@ -102,14 +102,7 @@ class _HomeState extends State<Home> {
                                     color: Colors.white, fontSize: 40.sp),
                               )),
                           Positioned(
-                              top: ScreenUtil().setHeight(topTwo + 300.h),
-                              child: Text(
-                                "(Created by me)",
-                                style: TextStyle(
-                                    color: Colors.white.withOpacity(0.5)),
-                              )),
-                          Positioned(
-                            top: ScreenUtil().setHeight(topTwo + 500.h),
+                            top: ScreenUtil().setHeight(topTwo +200.h),
                             child: SizedBox(
                               width: MediaQuery.of(context).size.width,
                               child: Padding(
@@ -133,10 +126,20 @@ class _HomeState extends State<Home> {
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 200),
                                         height: _isHovereda
-                                            ? 50+MediaQuery.of(context).size.width/3 + conw.h
-                                            : MediaQuery.of(context).size.width/3+conw.h,
-                                        width:
-                                            _isHovereda ? 50 + conw.w : conw.w,
+                                            ? 50 +
+                                                MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    3 +
+                                                conw.h
+                                            : MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    3 +
+                                                conw.h,
+                                        width: _isHovereda
+                                            ? 50 + conw.w * 4
+                                            : conw.w * 4,
                                         color: _isHovereda
                                             ? Colors.white
                                             : Colors.grey[300],
@@ -178,10 +181,20 @@ class _HomeState extends State<Home> {
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 200),
                                         height: _isHoveredb
-                                            ? 50+MediaQuery.of(context).size.width/3 + conw.h
-                                            : MediaQuery.of(context).size.width/3+conw.h,
-                                        width:
-                                            _isHoveredb ? 50 + conw.w : conw.w,
+                                            ? 50 +
+                                                MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    3 +
+                                                conw.h
+                                            : MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    3 +
+                                                conw.h,
+                                        width: _isHoveredb
+                                            ? 50 + conw.w * 4
+                                            : conw.w * 4,
                                         color: _isHoveredb
                                             ? Colors.white
                                             : Colors.grey[300],
@@ -223,10 +236,20 @@ class _HomeState extends State<Home> {
                                       child: AnimatedContainer(
                                         duration: Duration(milliseconds: 200),
                                         height: _isHoveredc
-                                            ? 50+MediaQuery.of(context).size.width/3 + conw.h
-                                            : MediaQuery.of(context).size.width/3+conw.h,
-                                        width:
-                                            _isHoveredc ? 50 + conw.w : conw.w,
+                                            ? 50 +
+                                                MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    3 +
+                                                conw.h
+                                            : MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    3 +
+                                                conw.h,
+                                        width: _isHoveredc
+                                            ? 50 + conw.w * 4
+                                            : conw.w * 4,
                                         color: _isHoveredc
                                             ? Colors.white
                                             : Colors.grey[300],
@@ -260,15 +283,8 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Positioned(
-                              top: ScreenUtil().setHeight(topOne + 1550.h),
-                              child: Text(
-                                "My Skills",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 30.sp),
-                              )),
-                          Positioned(
                               top: ScreenUtil().setHeight(topOne + 1680.h),
-                              left: 10.w,
+                              right: 700.w,
                               child: Transform.scale(
                                   scale: 0.9,
                                   child: Transform.rotate(
@@ -287,7 +303,7 @@ class _HomeState extends State<Home> {
                                           image: AssetImage(
                                               'assets/dolphin.png'))))),
                           Positioned(
-                              top: ScreenUtil().setHeight(1400),
+                              top: ScreenUtil().setHeight(2200.h),
                               child: Transform.scale(
                                 scale: 2,
                                 child: Stack(
@@ -321,8 +337,16 @@ Widget buildScroll(BuildContext context, double bot) {
     height: 5400.h,
     color: Color(0xffC0C0C0),
     child: Stack(
+      alignment: Alignment.center,
       children: [
         Positioned(
+            top: ScreenUtil().setHeight(100.h),
+            child: Text(
+              "My Skills",
+              style: TextStyle(color: Colors.black, fontSize: 90.sp),
+            )),
+
+        /*Positioned(
           top: ScreenUtil().setHeight(300.h),
           left: ScreenUtil().setWidth(80),
           child: Container(
@@ -335,48 +359,57 @@ Widget buildScroll(BuildContext context, double bot) {
                   child: Visibility(
                       visible: false,
                       child: Image(image: AssetImage('assets/skills.png'))))),
-        ),
+        ),*/
         Positioned(
-            left: ScreenUtil().setWidth(bot.h),
-            top: ScreenUtil().setHeight(40),
+            left: ScreenUtil().setWidth(bot.h * 4),
+            top: ScreenUtil().setHeight(500.h),
             child: SizedBox(
-                height: 1000.h,
+                height: MediaQuery.of(context).size.width/2.2,
                 child: Image(
                   image: AssetImage('assets/fishes.png'),
                   fit: BoxFit.cover,
                   colorBlendMode: BlendMode.srcOver,
                 ))),
         Positioned(
-            top: ScreenUtil().setHeight(1000.h),
-            left: ScreenUtil().setWidth(50),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
+          top: 500.h,
+          child: Container(
+              height: MediaQuery.of(context).size.width / 7.5,
+              width: 600.w,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.grey[800]),
               child: SizedBox(
-                width: 300.w,
-                child: Text(
-                  "I am a creative person. I am always dedicated towards my work. I wish to upscale my skills and improve myself whenever it is needed.",
-                  style: TextStyle(fontSize: 10.sp),
-                ),
-              ),
-            )),
+                  height: MediaQuery.of(context).size.width / 4.5,
+                  width: 230.w,
+                  child: Visibility(
+                      visible: false,
+                      child: Image(image: AssetImage('assets/skills.png'))))),
+        ),
         Positioned(
-            top: ScreenUtil().setHeight(250.h),
-            left: ScreenUtil().setWidth(73),
-            child: SizedBox(
-                height: 62.h+MediaQuery.of(context).size.width / 4.5,
-                width: 260.w,
-                child: Image(image: AssetImage('assets/skills.png')))),
+          top: 500.h,
+          child: Container(
+              height: MediaQuery.of(context).size.width / 7.5,
+              width: 600.w,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10.0,bottom: 10),
+                child: SizedBox(
+                    child: Image(image: AssetImage('assets/skills.png'))),
+              )),
+        ),
         Positioned(
-            top: ScreenUtil().setHeight(1400.h),
+            top: ScreenUtil().setHeight(1550.h),
             child: Container(
               height: 3000.h,
               width: MediaQuery.of(context).size.width,
               child: Skills(),
             )),
         Positioned(
-            top: ScreenUtil().setHeight(MediaQuery.of(context).size.width*3.5+ bot * 2),
-            left: ScreenUtil().setHeight(2 * bot + 700.w),
-            child: Transform.rotate(angle: 5.5, child: Rocket()))
+            top: ScreenUtil()
+                .setHeight(MediaQuery.of(context).size.width * 4.h + bot * 2),
+            left: ScreenUtil().setHeight(2 * bot + 1700.w),
+            child: Transform.rotate(
+                angle: 5.5,
+                child: Transform.scale(scale: 0.8, child: Rocket())))
       ],
     ),
   );

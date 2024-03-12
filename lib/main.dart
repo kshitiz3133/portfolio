@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio/home.dart';
+import 'package:portfolio/responsivedecider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +11,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-        designSize: const Size(390, 844),
-    builder: (context, child) =>
-      MaterialApp(
-      home: Home(),
-    ));
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth > 600) {
+          return Dekstop();
+        } else {
+          return Mobile();
+        }
+      },
+    );
   }
 }
 

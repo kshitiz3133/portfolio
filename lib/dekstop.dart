@@ -325,6 +325,7 @@ class _DESKHOMEState extends State<DESKHOME> {
                     buildScroll(context, bot),
                   ],
                 ),
+
               ],
             )),
       ),
@@ -399,7 +400,6 @@ Widget buildScroll(BuildContext context, double bot) {
         Positioned(
             top: ScreenUtil().setHeight(1550.h),
             child: Container(
-              height: 3000.h,
               width: MediaQuery.of(context).size.width,
               child: Skills(),
             )),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
+
 
 class Socials extends StatefulWidget {
   const Socials({Key? key}) : super(key: key);
@@ -46,6 +49,8 @@ class _SocialsState extends State<Socials> with TickerProviderStateMixin {
 class MySocials extends AnimatedWidget {
   final Animation animation;
   final Animation aanimation;
+  bool ishovereda=false;
+  bool ishoveredb=false;
 
   MySocials(this.animation, this.aanimation) : super(listenable: animation);
 
@@ -62,10 +67,21 @@ class MySocials extends AnimatedWidget {
               left: aanimation.value,
             ),
             child: InkWell(
-              onTap:(){} ,
-              child: Container(
-                height: 300.h,
-                child: Image.asset('assets/github.png'),
+              onTap:(){
+                _launchURLa();
+              } ,
+              child: MouseRegion(
+                onEnter: (event){
+                  ishovereda=true;
+                },
+                onExit: (event){
+                  ishovereda=false;
+                },
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  height: ishovereda? 325.h:300.h,
+                  child: Image.asset('assets/github.png'),
+                ),
               ),
             ),
           ),
@@ -75,15 +91,41 @@ class MySocials extends AnimatedWidget {
               right: aanimation.value,
             ),
             child: InkWell(
-              onTap: (){},
-              child: Container(
-                height: 300.h,
-                child: Image.asset('assets/ln.png'),
+              onTap: (){_launchURLb();},
+              child: MouseRegion(
+                onEnter: (event){
+                  ishoveredb=true;
+                },
+                onExit: (event){
+                  ishoveredb=false;
+                },
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  height: ishoveredb? 325.h:300.h,
+                  child: Image.asset('assets/ln.png'),
+                ),
               ),
             ),
           ),
         ],
       ),
     );
+  }
+}
+
+void _launchURLa() async {
+  const url = 'https://github.com/kshitiz3133';
+  if (await canLaunchUrlString(url)) {
+    await launchUrlString(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+void _launchURLb() async {
+  const url = 'https://www.linkedin.com/in/kshitiz3133/';
+  if (await canLaunchUrlString(url)) {
+    await launchUrlString(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }

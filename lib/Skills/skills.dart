@@ -17,7 +17,7 @@ class Skills extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SizedBox(
-                    width: MediaQuery.of(context).size.width / 4,
+                    width: MediaQuery.of(context).size.width / 5,
                     child: Image(
                       image: AssetImage('assets/flutter.png'),
                     )),
@@ -69,7 +69,7 @@ class Skills extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                      width: MediaQuery.of(context).size.width/4,
+                      width: MediaQuery.of(context).size.width/5,
                       child: Image(
                         image: AssetImage('assets/firebase.png'),
                       )),
@@ -104,7 +104,7 @@ class Skills extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(
-                        width: MediaQuery.of(context).size.width / 5,
+                        width: MediaQuery.of(context).size.width / 6,
                         child: Image(image: AssetImage('assets/figma.png'))),
                     SizedBox(width: MediaQuery.of(context).size.width / 8,),
                     SizedBox(

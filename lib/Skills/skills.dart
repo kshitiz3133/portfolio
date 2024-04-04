@@ -9,7 +9,7 @@ class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(1.0)),
+      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(0.8)),
       child: Column(
         children: [
           SizedBox(

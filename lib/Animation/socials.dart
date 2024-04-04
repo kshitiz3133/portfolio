@@ -56,59 +56,120 @@ class MySocials extends AnimatedWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 700.h ,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              top: animation.value+14,
-              left: aanimation.value,
-            ),
-            child: InkWell(
-              onTap:(){
-                _launchURLa();
-              } ,
-              child: MouseRegion(
-                onEnter: (event){
-                  ishovereda=true;
-                },
-                onExit: (event){
-                  ishovereda=false;
-                },
-                child: AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
-                  height: ishovereda? 325.h:300.h,
-                  child: Image.asset('assets/github.png'),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth > 600) {
+          return Container(
+            height: 700.h ,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: animation.value+14,
+                    left: aanimation.value,
+                  ),
+                  child: InkWell(
+                    onTap:(){
+                      _launchURLa();
+                    } ,
+                    child: MouseRegion(
+                      onEnter: (event){
+                        ishovereda=true;
+                      },
+                      onExit: (event){
+                        ishovereda=false;
+                      },
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        height: ishovereda? 325.h:300.h,
+                        child: Image.asset('assets/github.png'),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              top:animation.value+2,
-              right: aanimation.value,
-            ),
-            child: InkWell(
-              onTap: (){_launchURLb();},
-              child: MouseRegion(
-                onEnter: (event){
-                  ishoveredb=true;
-                },
-                onExit: (event){
-                  ishoveredb=false;
-                },
-                child: AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
-                  height: ishoveredb? 325.h:300.h,
-                  child: Image.asset('assets/ln.png'),
+                Padding(
+                  padding: EdgeInsets.only(
+                    top:animation.value+2,
+                    right: aanimation.value,
+                  ),
+                  child: InkWell(
+                    onTap: (){_launchURLb();},
+                    child: MouseRegion(
+                      onEnter: (event){
+                        ishoveredb=true;
+                      },
+                      onExit: (event){
+                        ishoveredb=false;
+                      },
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        height: ishoveredb? 325.h:300.h,
+                        child: Image.asset('assets/ln.png'),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-          ),
-        ],
-      ),
+          );
+        } else {
+          return Container(
+            height: 200.h ,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: animation.value+14,
+                    left: aanimation.value,
+                  ),
+                  child: InkWell(
+                    onTap:(){
+                      _launchURLa();
+                    } ,
+                    child: MouseRegion(
+                      onEnter: (event){
+                        ishovereda=true;
+                      },
+                      onExit: (event){
+                        ishovereda=false;
+                      },
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        height: ishovereda? 125.h:100.h,
+                        child: Image.asset('assets/github.png'),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    top:animation.value+2,
+                    right: aanimation.value,
+                  ),
+                  child: InkWell(
+                    onTap: (){_launchURLb();},
+                    child: MouseRegion(
+                      onEnter: (event){
+                        ishoveredb=true;
+                      },
+                      onExit: (event){
+                        ishoveredb=false;
+                      },
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        height: ishoveredb? 125.h:100.h,
+                        child: Image.asset('assets/ln.png'),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+      },
     );
   }
 }

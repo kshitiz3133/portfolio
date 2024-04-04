@@ -38,6 +38,7 @@ dependencies:
   flutter_screenutil: ^5.9.0
   lottie:
   url_launcher: ^6.0.9
+  flutter_svg:
 
 
 dev_dependencies:

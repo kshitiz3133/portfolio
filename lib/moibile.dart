@@ -144,21 +144,20 @@ class _HomeState extends State<Home> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            SizedBox(
-                                              height: 100.h,
-                                            ),
-                                            Icon(
-                                              Icons.chat_rounded,
-                                              color: Colors.black,
-                                              size: conw / 2,
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: const Image(image: AssetImage("assets/app1.jpg")),
                                             ),
                                             SizedBox(
                                               height: conw.h,
                                             ),
-                                            Text(
-                                              "Minimal Chatting App",
-                                              style: TextStyle(fontSize: 6.sp),
-                                              maxLines: 3,
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                "🌟 UNREAL ENGINE X FLUTTER AND MOBILE SENSORS 🌟",
+                                                style: TextStyle(fontSize: 6.sp),
+                                                maxLines: 3,
+                                              ),
                                             )
                                           ],
                                         ),
@@ -189,13 +188,9 @@ class _HomeState extends State<Home> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            SizedBox(
-                                              height: 100.h,
-                                            ),
-                                            Icon(
-                                              Icons.chat_rounded,
-                                              color: Colors.black,
-                                              size: conw / 2,
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: const Image(image: AssetImage("assets/app2.png")),
                                             ),
                                             SizedBox(
                                               height: conw.h,
@@ -234,19 +229,15 @@ class _HomeState extends State<Home> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            SizedBox(
-                                              height: 100.h,
-                                            ),
-                                            Icon(
-                                              Icons.chat_rounded,
-                                              color: Colors.black,
-                                              size: conw / 2,
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: const Image(image: AssetImage("assets/app3.png")),
                                             ),
                                             SizedBox(
                                               height: conw.h,
                                             ),
                                             Text(
-                                              "Minimal Chatting App",
+                                              "Expense Tracking App",
                                               style: TextStyle(fontSize: 6.sp),
                                               maxLines: 3,
                                             )

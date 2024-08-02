@@ -6,6 +6,7 @@ import 'package:portfolio/Animation/cat.dart';
 import 'package:portfolio/Animation/rocket.dart';
 import 'package:portfolio/Animation/wave.dart';
 import 'package:portfolio/Skills/skills.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class DESKHOME extends StatefulWidget {
   const DESKHOME({Key? key}) : super(key: key);
@@ -143,27 +144,30 @@ class _DESKHOMEState extends State<DESKHOME> {
                                         color: _isHovereda
                                             ? Colors.white
                                             : Colors.grey[300],
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            SizedBox(
-                                              height: 100.h,
-                                            ),
-                                            Icon(
-                                              Icons.chat_rounded,
-                                              color: Colors.black,
-                                              size: conw / 2,
-                                            ),
-                                            SizedBox(
-                                              height: conw.h,
-                                            ),
-                                            Text(
-                                              "Minimal Chatting App",
-                                              style: TextStyle(fontSize: 6.sp),
-                                              maxLines: 3,
-                                            )
-                                          ],
+                                        child: InkWell(
+                                          onTap: _launchURLa,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: const Image(image: AssetImage("assets/app1.jpg")),
+                                              ),
+                                              SizedBox(
+                                                height: conw.h,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Text(
+                                                  "🌟 UNREAL ENGINE X FLUTTER AND MOBILE SENSORS 🌟",
+                                                  style: TextStyle(fontSize: 20.sp),
+                                                  maxLines: 3,
+                                                ),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -198,27 +202,27 @@ class _DESKHOMEState extends State<DESKHOME> {
                                         color: _isHoveredb
                                             ? Colors.white
                                             : Colors.grey[300],
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            SizedBox(
-                                              height: 100.h,
-                                            ),
-                                            Icon(
-                                              Icons.chat_rounded,
-                                              color: Colors.black,
-                                              size: conw / 2,
-                                            ),
-                                            SizedBox(
-                                              height: conw.h,
-                                            ),
-                                            Text(
-                                              "Minimal Chatting App",
-                                              style: TextStyle(fontSize: 6.sp),
-                                              maxLines: 3,
-                                            )
-                                          ],
+                                        child: InkWell(
+                                          onTap: _launchURLb,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: const Image(image: AssetImage("assets/app2.png")),
+                                              ),
+                                              SizedBox(
+                                                height: conw.h,
+                                              ),
+                                              Text(
+                                                "Minimal Chatting App",
+                                                style: TextStyle(fontSize: 20.sp),
+                                                maxLines: 3,
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -253,27 +257,27 @@ class _DESKHOMEState extends State<DESKHOME> {
                                         color: _isHoveredc
                                             ? Colors.white
                                             : Colors.grey[300],
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            SizedBox(
-                                              height: 100.h,
-                                            ),
-                                            Icon(
-                                              Icons.chat_rounded,
-                                              color: Colors.black,
-                                              size: conw / 2,
-                                            ),
-                                            SizedBox(
-                                              height: conw.h,
-                                            ),
-                                            Text(
-                                              "Minimal Chatting App",
-                                              style: TextStyle(fontSize: 6.sp),
-                                              maxLines: 3,
-                                            )
-                                          ],
+                                        child: InkWell(
+                                          onTap: _launchURLc,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: const Image(image: AssetImage("assets/app3.png")),
+                                              ),
+                                              SizedBox(
+                                                height: conw.h,
+                                              ),
+                                              Text(
+                                                "Expense Tracking App",
+                                                style: TextStyle(fontSize: 20.sp),
+                                                maxLines: 3,
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -305,7 +309,7 @@ class _DESKHOMEState extends State<DESKHOME> {
                           Positioned(
                               top: ScreenUtil().setHeight(2200.h),
                               child: Transform.scale(
-                                scale: 2,
+                                scale: 2.sp,
                                 child: Stack(
                                   children: [
                                     MyAnimation(),
@@ -335,7 +339,7 @@ class _DESKHOMEState extends State<DESKHOME> {
 
 Widget buildScroll(BuildContext context, double bot) {
   return Container(
-    height: 5400.h,
+    height: 6100.h,
     color: Color(0xffC0C0C0),
     child: Stack(
       alignment: Alignment.center,
@@ -413,4 +417,28 @@ Widget buildScroll(BuildContext context, double bot) {
       ],
     ),
   );
+}
+void _launchURLa() async {
+  const url = 'https://www.linkedin.com/feed/update/urn:li:activity:7191107737299161088/';
+  if (await canLaunchUrlString(url)) {
+    await launchUrlString(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+void _launchURLb() async {
+  const url = 'https://github.com/kshitiz3133/chatting';
+  if (await canLaunchUrlString(url)) {
+    await launchUrlString(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+void _launchURLc() async {
+  const url = 'https://kshitiz.co/';
+  if (await canLaunchUrlString(url)) {
+    await launchUrlString(url);
+  } else {
+    throw 'Could not launch $url';
+  }
 }

@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/Animation/socials.dart';
 import 'package:portfolio/Animation/wave.dart';
+
+import '../Animation/resume.dart';
 //commit
 class Skills extends StatelessWidget {
   @override
@@ -58,7 +60,7 @@ class Skills extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "FIREBASE",
+                          "Node.js & FIREBASE",
                           style: TextStyle(fontSize: 40.sp, color: Colors.black),
                         ),
                         Text(
@@ -136,6 +138,11 @@ class Skills extends StatelessWidget {
             child: Text("Socials",style: TextStyle(fontSize: 40.sp),),
           ),
           const Socials(),
+          Padding(
+            padding: const EdgeInsets.only(top: 100.0,bottom: 100),
+            child: Text("Resume",style: TextStyle(fontSize: 40.sp),),
+          ),
+          const Resume(),
         ],
       ),
     );

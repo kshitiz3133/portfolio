@@ -435,7 +435,7 @@ void _launchURLb() async {
   }
 }
 void _launchURLc() async {
-  const url = 'https://kshitiz.co/';
+  const url = 'https://github.com/kshitiz3133/expensetrack';
   if (await canLaunchUrlString(url)) {
     await launchUrlString(url);
   } else {

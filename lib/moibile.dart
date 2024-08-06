@@ -102,143 +102,146 @@ class _HomeState extends State<Home> {
                                     color: Colors.white, fontSize: 40.sp),
                               )),
                           Positioned(
-                            top: ScreenUtil().setHeight(topTwo + 100.h),
-                            child: SizedBox(
-                              height: 1000,
-                              width: MediaQuery.of(context).size.width,
-                              child: Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Column(
-                                  children: [
-                                    MouseRegion(
-                                      onEnter: (event) {
-                                        setState(() {
-                                          _isHovereda = true;
-                                        });
-                                      },
-                                      onExit: (event) {
-                                        setState(() {
-                                          _isHovereda = false;
-                                        });
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
-                                        height: _isHovereda
-                                            ? 50+MediaQuery.of(context).size.width/3 + conw.h
-                                            : MediaQuery.of(context).size.width/3+conw.h,
-                                        width:
-                                            _isHovereda ? 50 + conw.w : conw.w,
-                                        color: _isHovereda
-                                            ? Colors.white
-                                            : Colors.grey[300],
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: const Image(image: AssetImage("assets/app1.jpg")),
-                                            ),
-                                            SizedBox(
-                                              height: conw.h,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: Text(
-                                                "🌟 UNREAL ENGINE X FLUTTER AND MOBILE SENSORS 🌟",
+                            top: ScreenUtil().setHeight(topTwo + 200.h),
+                            child: Transform.scale(
+                              scale: 0.9,
+                              child: SizedBox(
+                                height: 1000,
+                                width: MediaQuery.of(context).size.width,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Column(
+                                    children: [
+                                      MouseRegion(
+                                        onEnter: (event) {
+                                          setState(() {
+                                            _isHovereda = true;
+                                          });
+                                        },
+                                        onExit: (event) {
+                                          setState(() {
+                                            _isHovereda = false;
+                                          });
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: Duration(milliseconds: 200),
+                                          height: _isHovereda
+                                              ? 50+MediaQuery.of(context).size.width/3 + conw.h
+                                              : MediaQuery.of(context).size.width/3+conw.h,
+                                          width:
+                                              _isHovereda ? 50 + conw.w : conw.w,
+                                          color: _isHovereda
+                                              ? Colors.white
+                                              : Colors.grey[300],
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: const Image(image: AssetImage("assets/app1.jpg")),
+                                              ),
+                                              SizedBox(
+                                                height: conw.h,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Text(
+                                                  "🌟 UNREAL ENGINE X FLUTTER AND MOBILE SENSORS 🌟",
+                                                  style: TextStyle(fontSize: 6.sp),
+                                                  maxLines: 3,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 10,),
+                                      MouseRegion(
+                                        onEnter: (event) {
+                                          setState(() {
+                                            _isHoveredb = true;
+                                          });
+                                        },
+                                        onExit: (event) {
+                                          setState(() {
+                                            _isHoveredb = false;
+                                          });
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: Duration(milliseconds: 200),
+                                          height: _isHoveredb
+                                              ? 50+MediaQuery.of(context).size.width/3 + conw.h
+                                              : MediaQuery.of(context).size.width/3+conw.h,
+                                          width:
+                                              _isHoveredb ? 50 + conw.w : conw.w,
+                                          color: _isHoveredb
+                                              ? Colors.white
+                                              : Colors.grey[300],
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: const Image(image: AssetImage("assets/app2.png")),
+                                              ),
+                                              SizedBox(
+                                                height: conw.h,
+                                              ),
+                                              Text(
+                                                "Minimal Chatting App",
                                                 style: TextStyle(fontSize: 6.sp),
                                                 maxLines: 3,
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 10,),
+                                      MouseRegion(
+                                        onEnter: (event) {
+                                          setState(() {
+                                            _isHoveredc = true;
+                                          });
+                                        },
+                                        onExit: (event) {
+                                          setState(() {
+                                            _isHoveredc = false;
+                                          });
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: Duration(milliseconds: 200),
+                                          height: _isHoveredc
+                                              ? 50+MediaQuery.of(context).size.width/3 + conw.h
+                                              : MediaQuery.of(context).size.width/3+conw.h,
+                                          width:
+                                              _isHoveredc ? 50 + conw.w : conw.w,
+                                          color: _isHoveredc
+                                              ? Colors.white
+                                              : Colors.grey[300],
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: const Image(image: AssetImage("assets/app3.png")),
                                               ),
-                                            )
-                                          ],
+                                              SizedBox(
+                                                height: conw.h,
+                                              ),
+                                              Text(
+                                                "Expense Tracking App",
+                                                style: TextStyle(fontSize: 6.sp),
+                                                maxLines: 3,
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    SizedBox(height: 10,),
-                                    MouseRegion(
-                                      onEnter: (event) {
-                                        setState(() {
-                                          _isHoveredb = true;
-                                        });
-                                      },
-                                      onExit: (event) {
-                                        setState(() {
-                                          _isHoveredb = false;
-                                        });
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
-                                        height: _isHoveredb
-                                            ? 50+MediaQuery.of(context).size.width/3 + conw.h
-                                            : MediaQuery.of(context).size.width/3+conw.h,
-                                        width:
-                                            _isHoveredb ? 50 + conw.w : conw.w,
-                                        color: _isHoveredb
-                                            ? Colors.white
-                                            : Colors.grey[300],
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: const Image(image: AssetImage("assets/app2.png")),
-                                            ),
-                                            SizedBox(
-                                              height: conw.h,
-                                            ),
-                                            Text(
-                                              "Minimal Chatting App",
-                                              style: TextStyle(fontSize: 6.sp),
-                                              maxLines: 3,
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(height: 10,),
-                                    MouseRegion(
-                                      onEnter: (event) {
-                                        setState(() {
-                                          _isHoveredc = true;
-                                        });
-                                      },
-                                      onExit: (event) {
-                                        setState(() {
-                                          _isHoveredc = false;
-                                        });
-                                      },
-                                      child: AnimatedContainer(
-                                        duration: Duration(milliseconds: 200),
-                                        height: _isHoveredc
-                                            ? 50+MediaQuery.of(context).size.width/3 + conw.h
-                                            : MediaQuery.of(context).size.width/3+conw.h,
-                                        width:
-                                            _isHoveredc ? 50 + conw.w : conw.w,
-                                        color: _isHoveredc
-                                            ? Colors.white
-                                            : Colors.grey[300],
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsets.all(8.0),
-                                              child: const Image(image: AssetImage("assets/app3.png")),
-                                            ),
-                                            SizedBox(
-                                              height: conw.h,
-                                            ),
-                                            Text(
-                                              "Expense Tracking App",
-                                              style: TextStyle(fontSize: 6.sp),
-                                              maxLines: 3,
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

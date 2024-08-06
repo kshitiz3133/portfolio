@@ -31,15 +31,15 @@ class Skills extends StatelessWidget {
                     children: [
                       Text(
                         "FLUTTER",
-                        style: TextStyle(fontSize: 40.sp, color: Colors.black),
+                        style: TextStyle(fontSize: 25.sp, color: Colors.black),
                       ),
                       Text(
                         "-frontend framework",
-                        style: TextStyle(fontSize: 30.sp),
+                        style: TextStyle(fontSize: 15.sp),
                       ),
                       Text(
                         "-for cross platform development",
-                        style: TextStyle(fontSize: 20.sp),
+                        style: TextStyle(fontSize: 15.sp),
                       ),
                     ],
                   ),
@@ -61,11 +61,11 @@ class Skills extends StatelessWidget {
                       children: [
                         Text(
                           "Node.js & FIREBASE",
-                          style: TextStyle(fontSize: 40.sp, color: Colors.black),
+                          style: TextStyle(fontSize: 25.sp, color: Colors.black),
                         ),
                         Text(
                           "-for backend",
-                          style: TextStyle(fontSize: 30.sp),
+                          style: TextStyle(fontSize: 15.sp),
                         ),
                       ],
                     ),
@@ -80,57 +80,61 @@ class Skills extends StatelessWidget {
             ),
           ),
           SizedBox(height: 200.h,),
-          SizedBox(
-            width: 1000.w,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: 20.w,
-                    ),
-                    Text(
-                      "Creative Tools",
-                      style: TextStyle(fontSize: 40.sp),
-                    ),
-                    SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        child: Image(image: AssetImage('assets/canva.png'))),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                        width: MediaQuery.of(context).size.width / 6,
-                        child: Image(image: AssetImage('assets/figma.png'))),
-                    SizedBox(width: MediaQuery.of(context).size.width / 8,),
-                    SizedBox(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Figma for UI designing",
-                            style: TextStyle(fontSize: 30.sp),
-                            maxLines: 3,
-                            overflow: TextOverflow.visible,
-                          ),
-                          Text(
-                            "Canva for graphics",
-                            style: TextStyle(fontSize: 30.sp),
-                            maxLines: 3,
-                            overflow: TextOverflow.visible,
-                          ),
-                        ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: 1000.w,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: 20.w,
                       ),
-                    )
-                  ],
-                )
-              ],
+                      Text(
+                        "Creative Tools",
+                        style: TextStyle(fontSize: 25.sp),
+                      ),
+                      SizedBox(
+                          width: MediaQuery.of(context).size.width / 6,
+                          child: Image(image: AssetImage('assets/canva.png'))),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                          width: MediaQuery.of(context).size.width / 6,
+                          child: Image(image: AssetImage('assets/figma.png'))),
+                      SizedBox(width: MediaQuery.of(context).size.width / 8,),
+                      SizedBox(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Figma for UI designing",
+                              style: TextStyle(fontSize: 25.sp),
+                              maxLines: 3,
+                              overflow: TextOverflow.visible,
+                            ),
+                            Text(
+                              "Canva for graphics",
+                              style: TextStyle(fontSize: 25.sp),
+                              maxLines: 3,
+                              overflow: TextOverflow.visible,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
           Padding(

@@ -80,7 +80,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Positioned(
-                    top: ScreenUtil().setHeight(topTwo + 400.h),
+                    top: ScreenUtil().setHeight(topTwo + 500.h),
                     child: Icon(Icons.keyboard_double_arrow_down_sharp)),
                 ListView(
                   children: [
@@ -95,29 +95,20 @@ class _HomeState extends State<Home> {
                         alignment: Alignment.center,
                         children: [
                           Positioned(
-                              top: ScreenUtil().setHeight(topOne + 50.h),
+                              top: ScreenUtil().setHeight(topOne + 30.h),
                               child: Text(
                                 "My projects",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 40.sp),
                               )),
                           Positioned(
-                              top: ScreenUtil().setHeight(topTwo + 300.h),
-                              child: Text(
-                                "(Created by me)",
-                                style: TextStyle(
-                                    color: Colors.white.withOpacity(0.5)),
-                              )),
-                          Positioned(
-                            top: ScreenUtil().setHeight(topTwo + 500.h),
+                            top: ScreenUtil().setHeight(topTwo + 100.h),
                             child: SizedBox(
+                              height: 1000,
                               width: MediaQuery.of(context).size.width,
                               child: Padding(
                                 padding: const EdgeInsets.all(20.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                child: Column(
                                   children: [
                                     MouseRegion(
                                       onEnter: (event) {
@@ -163,6 +154,7 @@ class _HomeState extends State<Home> {
                                         ),
                                       ),
                                     ),
+                                    SizedBox(height: 10,),
                                     MouseRegion(
                                       onEnter: (event) {
                                         setState(() {
@@ -204,6 +196,7 @@ class _HomeState extends State<Home> {
                                         ),
                                       ),
                                     ),
+                                    SizedBox(height: 10,),
                                     MouseRegion(
                                       onEnter: (event) {
                                         setState(() {
@@ -251,7 +244,7 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Positioned(
-                              top: ScreenUtil().setHeight(topOne + 1550.h),
+                              top: ScreenUtil().setHeight(topOne + 1650.h),
                               child: Text(
                                 "My Skills",
                                 style: TextStyle(

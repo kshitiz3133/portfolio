@@ -137,7 +137,7 @@ class MySocials extends AnimatedWidget {
                       },
                       child: AnimatedContainer(
                         duration: Duration(milliseconds: 300),
-                        height: ishovereda? 125.h:100.h,
+                        height: ishovereda? 150.h:125.h,
                         child: Image.asset('assets/github.png'),
                       ),
                     ),
@@ -159,7 +159,7 @@ class MySocials extends AnimatedWidget {
                       },
                       child: AnimatedContainer(
                         duration: Duration(milliseconds: 300),
-                        height: ishoveredb? 125.h:100.h,
+                        height: ishoveredb? 150.h:125.h,
                         child: Image.asset('assets/ln.png'),
                       ),
                     ),
